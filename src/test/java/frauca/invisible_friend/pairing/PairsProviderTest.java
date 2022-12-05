@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class PairsProviderTest {
 
-    private static final int SAVETY_RANDOM_REPETITIONS=10000;
+    private static final int SAVETY_RANDOM_REPETITIONS=50000;
     PairsProvider provider = new PairsProvider();
 
     @Test
@@ -29,7 +29,6 @@ class PairsProviderTest {
 
         assertThat(pairs).map(pair->pair.giver().name()).containsExactlyInAnyOrderElementsOf(allNames);
         assertThat(pairs).map(pair->pair.receiver().name()).containsExactlyInAnyOrderElementsOf(allNames);
-
         assertThat(pairs).filteredOn(pair->pair.giver().equals(pair.receiver())).isEmpty();
     }
 
