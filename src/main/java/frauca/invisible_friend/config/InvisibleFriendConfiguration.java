@@ -9,14 +9,14 @@ import frauca.invisible_friend.mail.MessageContents;
 import lombok.val;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.mail.MailSender;
+import org.springframework.mail.javamail.JavaMailSender;
 import picocli.CommandLine;
 
 @Configuration
 public class InvisibleFriendConfiguration {
 
     @Bean
-    MailService mailService(InvisibleFriendProperties config, MailSender sender){
+    MailService mailService(InvisibleFriendProperties config, JavaMailSender sender){
         val formatter = new FreemarkerFormatter();
         val messageContents = new MessageContents(config.getContent(),formatter);
         return new MailService(sender, messageContents);
