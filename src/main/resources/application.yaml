@@ -16,7 +16,7 @@ friends:
     mail: friend2@gmail.com
 
 content:
-  subject: This is a test from ${giver().name()}
+  subject: This is a test from ${giver.name()}
   body: |
     <!doctype html>
     <html>
@@ -372,7 +372,7 @@ content:
     <p>This is invisible friend template,</p>
     <p>You have giver and receiver friends. Each with name and email</p>
     <p>You have giver and receiver friends. Each with name and email</p>
-    <p>If you write ${giver().name()} it will show givers name, and if you write ${receiver().mail()} you will get receiver email</p>
+    <p>If you write ${giver.name()} it will show givers name, and if you write ${receiver.mail()} you will get receiver email</p>
     </td>
     </tr>
     </tbody>
@@ -398,6 +398,13 @@ content:
     <br> You can see the code in <a href="https://github.com/frauca/invisible_friend">github</a>.
     </td>
     </tr>
+    <tr><td>
+        <ul>
+          <#list friends as friend>
+            <li>${friend.name()}</li>
+          </#list>
+        </ul>
+    </td></tr>
     <tr>
     <td class="content-block powered-by">https://github.com/leemunroe/responsive-html-email-template
     Powered by <a href="http://htmlemail.io">HTMLemail</a>.

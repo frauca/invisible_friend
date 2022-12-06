@@ -18,7 +18,7 @@ public class InvisibleFriendConfiguration {
 
     @Bean
     MailService mailService(InvisibleFriendProperties config, JavaMailSender sender){
-        val formatter = new FreemarkerFormatter();
+        val formatter = new FreemarkerFormatter(config.getFriends());
         val messageContents = new MessageContents(config.getContent(),formatter);
         return new MailService(sender, messageContents);
     }

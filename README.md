@@ -23,9 +23,13 @@ content:
     This texts follows yaml format. 
     \n will be appended at the end of the line.
     You can use giver and receiver information. 
-    Each one has name and mail.
-    For example ${receiver().name()} will be replaced by it's name.
-    Or ${sender().mail()} will be replaced by it's name.
+    Each one has name and mail. You also have the list of friends with each name and mail
+    For example ${receiver.name()} will be replaced by it's name.
+    Or ${sender.mail()} will be replaced by it's name.
+    You can list the friends as.
+    <#list friends as friend>
+        <li>${friend.name()}</li>
+      </#list>
 ```
 
 I do have double factor authentication in gmail, so I need to [follow google app passwords](https://support.google.com/accounts/answer/185833?hl=en).
