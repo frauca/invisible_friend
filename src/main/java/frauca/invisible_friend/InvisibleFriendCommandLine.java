@@ -9,7 +9,7 @@ import picocli.CommandLine;
 public class InvisibleFriendCommandLine implements CommandLineRunner, ExitCodeGenerator {
     private final InsivibleFriendCommand command;
     private final CommandLine.IFactory factory;
-    private int exitCode= InsivibleFriendCommand.FAILURE;
+    private int exitCode;
 
     @Override
     public void run(String... args) throws Exception {

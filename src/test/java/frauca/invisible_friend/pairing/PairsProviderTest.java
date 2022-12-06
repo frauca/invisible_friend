@@ -5,18 +5,21 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class PairsProviderTest {
 
-    private static final int SAVETY_RANDOM_REPETITIONS=50000;
+    private static final int SAVETY_RANDOM_REPETITIONS=5000;
     PairsProvider provider = new PairsProvider();
 
     @Test
     void nullOrEmpty(){
         assertThat(provider.makePairs(null)).isEmpty();
         assertThat(provider.makePairs(Collections.emptyList())).isEmpty();
+        val oneFriend = List.of(FriendSampler.friend());
+        assertThat(provider.makePairs(oneFriend)) .isEmpty();
     }
 
     @RepeatedTest(SAVETY_RANDOM_REPETITIONS)

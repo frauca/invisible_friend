@@ -13,7 +13,7 @@ import java.util.Queue;
 public class PairsProvider {
 
     public List<Pair> makePairs(List<Friend> friends){
-       if(friends == null || friends.isEmpty()){
+       if(friends == null || friends.size()<2){
            return Collections.emptyList();
        }
        val receivers = new LinkedList<>(friends);

@@ -14,4 +14,5 @@ import java.util.List;
 @Getter
 public class InvisibleFriendProperties {
     List<Friend> friends;
+    MailContentTemplates content;
 }

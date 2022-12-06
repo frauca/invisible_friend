@@ -1,5 +1,27 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your_gmail_user
+    password: your_gmail_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
 friends:
   - name: Friend 1
     mail: friend1@mail.com
   - name: Friend 2
     mail: friend2@gmail.com
+
+content:
+  subject: This is a test from ${giver().name()}
+  body: |
+    This texts follows yaml format. 
+    \n will be appended at the end of the line.
+    You can use giver and receiver information. 
+    Each one has name and mail.
+    For example ${receiver().name()} will be replaced by it's name.
+    Or ${giver().mail()} will be replaced by it's name.
+    On VALIDATION, sender are receiver are the same person
