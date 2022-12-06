@@ -6,6 +6,7 @@ import frauca.invisible_friend.invisible.InvisibleFriendService;
 import frauca.invisible_friend.mail.FreemarkerFormatter;
 import frauca.invisible_friend.mail.MailService;
 import frauca.invisible_friend.mail.MessageContents;
+import frauca.invisible_friend.pairing.PairsProvider;
 import lombok.val;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,8 @@ public class InvisibleFriendConfiguration {
 
     @Bean
     InvisibleFriendService invisibleFriendService(InvisibleFriendProperties config, MailService mail){
-        return new InvisibleFriendService(config.getFriends(), mail);
+        val provider = new PairsProvider();
+        return new InvisibleFriendService(config.getFriends(), mail, provider);
     }
 
     @Bean

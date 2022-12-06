@@ -19,9 +19,16 @@ public class MailService {
     private final MessageContents content;
 
 
+    public void mailTo(Pair pair){
+        sendTo(pair);
+    }
     public void mailTo(Friend friend) {
         log.info("Sending mail to {}", friend.name());
         val pair = new Pair(friend, friend);
+        sendTo(pair);
+    }
+
+    private void sendTo(Pair pair) {
         sender.send(messageTo(pair));
     }
 

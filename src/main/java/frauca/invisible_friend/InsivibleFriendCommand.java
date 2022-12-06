@@ -16,7 +16,7 @@ public class InsivibleFriendCommand implements Callable<Integer> {
     static final Integer SUCCESS=0;
     static final Integer FAILURE=1;
     @CommandLine.Option(names="-t",
-            defaultValue = "VALIDATION",
+            defaultValue = "INVISIBLE",
             description = "Action to perform, default action is ${DEFAULT-VALUE}, and valid values are ${COMPLETION-CANDIDATES}")
     ActionType action;
     private final InvisibleFriendService service;
